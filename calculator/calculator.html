@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="calculator.css">
+    <title>ONLINE CALCULATOR</title>
+    <style>
+    *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+body{
+    background: rgba(65, 105, 225, 0.37);
+}
+.container{
+    width: 850px;
+    margin: 30px;
+    border: 1px gray solid;
+    padding: 30px;
+    background-color: gainsboro;
+}
+#ac{
+    font-size: 2rem;
+    padding: 5px;
+    border: 1px gray solid;
+    border-radius: 40%;
+    background: white;
+    text-align: center;
+    width: 100%;
+}
+#ac:hover{
+    background: red;
+    cursor: pointer;
+}
+.digits{
+    font-size: 2rem;
+    padding: 5px 50px;
+    border: gray 1.5px solid;
+    border-radius: 30%;
+    background: white;
+    text-align: center;
+}
+.digits:hover{
+    background: rgb(84, 187, 255);
+    cursor: pointer;
+}
+.amaliat{
+    text-align: center;
+    font-size: 2rem;
+    padding: 5px 50px;
+    border: gray 1.5px solid;
+    border-radius: 30%;
+    background: rgb(230, 226, 219);
+    margin: 5px;
+}
+.amaliat:hover{
+    background: rgb(248, 127, 57);
+    cursor: pointer;
+}
+#input{
+    width: 100%;
+    padding: 20px 0;
+    font-size: 1.5rem;
+}
+header{
+    display: flex;
+}
+    </style>
+</head>
+<body>
+    <form class="container" name="cal">
+        <input type="text" id="input" readonly name="calculator">
+        <br>
+        <br>
+        <header>
+        <span class="amaliat"" onclick="cal.calculator.value=cal.calculator.value*(Math.PI/180);">deg</span>       
+        <p id="ac" onclick="cal.calculator.value=''">DELETE</p>
+        <span class="amaliat" onclick="cal.calculator.value=cal.calculator.value*(180/Math.PI)">rad</span>
+        </header>
+        
+        <br>
+        <br>
+        <table>
+            <tbody>
+                <tr>
+    <td class="amaliat"  onclick="cal.calculator.value=Math.sqrt(cal.calculator.value)" >√</td>
+    <td class="digits" onclick="cal.calculator.value+='1'">1</td>
+    <td class="digits" onclick="cal.calculator.value+='2'">2</td>
+    <td class="digits" onclick="cal.calculator.value+='3'">3</td>
+    <td class="amaliat" onclick="cal.calculator.value+='('">(</td>
+    <td class="amaliat" onclick="cal.calculator.value+=')'">)</td>
+    
+
+        </tr>
+    <tr>
+    
+    <td class="amaliat" onclick="cal.calculator.value=Math.tan(cal.calculator.value)">tan</td>
+    <td class="digits" onclick="cal.calculator.value+='4'">4</td>
+    <td class="digits" onclick="cal.calculator.value+='5'">5</td>
+    <td class="digits" onclick="cal.calculator.value+='6'">6</td>
+    <td class="amaliat" onclick="cal.calculator.value+='+'">+</td>
+    <td class="amaliat"  onclick="cal.calculator.value+='-'" >−</td>
+    </tr>
+    
+    <tr>
+    <td class="amaliat"  onclick="cal.calculator.value=Math.sin(cal.calculator.value)">sin</td>
+    <td class="digits" onclick="cal.calculator.value+='7'">7</td>
+    <td class="digits" onclick="cal.calculator.value+='8'">8</td>
+    <td class="digits" onclick="cal.calculator.value+='9'">9</td>
+    <td class="amaliat" onclick="cal.calculator.value+='*'">×</td>
+    <td class="amaliat" onclick="cal.calculator.value+='/'">÷</td>
+    </tr>
+    <tr>
+    <td class="amaliat"  onclick="cal.calculator.value=Math.cos(cal.calculator.value)">cos</td>
+    <td class="digits" onclick="cal.calculator.value+='0'">0</td>
+    <td class="digits" onclick="cal.calculator.value+='.'">·</td>
+    <td class="amaliat" style="background-color: orange;" onclick="e()">=</td>
+    <td class="amaliat" onclick=" cal.calculator.value+='3.141592653589793'">π</td>
+    <td class="amaliat" onclick="cal.calculator.value+='**'">x<sup>y</sup></td>
+    
+
+    </tr>
+            </tbody>
+            
+        </table>
+        
+    
+    </form>
+    
+</body>
+<script>
+    function e(){
+        
+        if(cal.calculator.value!=""){
+            cal.calculator.value=eval(cal.calculator.value)
+        }
+        else if(cal.calculator.value==""){
+            alert("text box is empty")
+        }
+            
+    }
+    function deg(){
+        
+
+    }
+    function rad(){
+
+    }
+</script>
+</html>
